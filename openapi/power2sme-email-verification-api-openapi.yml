@@ -1,0 +1,119 @@
+swagger: '2.0'
+info:
+  description: Some custom description of API.
+  version: '1.0'
+  title: POWER2SME Bank Master Email Verification API
+  termsOfService: https://www.power2sme.com/termsandconditions
+  contact:
+    name: Power2sme
+  license:
+    name: License of API
+    url: https://www.power2sme.com/privacypolicy
+host: api.power2sme.com
+basePath: /api/ws/v4
+tags:
+- name: Email Verification
+  description: ' '
+paths:
+  /email/verification:
+    post:
+      tags:
+      - Email Verification
+      summary: Send email verification mail to the customer
+      description: It will send mail to email Id of the customer which needs to be verified.
+      operationId: sendEmailVerificationMailUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-META-INFO-SOURCE
+        in: header
+        description: Calling System Meta Info
+        required: true
+        type: string
+      - in: body
+        name: email
+        description: Customer Email Details
+        required: true
+        schema:
+          $ref: '#/definitions/Email details of the customer'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /email/verify/{uuid}:
+    get:
+      tags:
+      - Email Verification
+      summary: Receive email verified status from customer
+      description: It will receive verified email status from the customer when he clicks on link sent in verification email.
+      operationId: postVerifiedEmailUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: uuid
+        in: path
+        description: UUID
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Email details of the customer:
+    type: object
+    properties:
+      emailId:
+        type: string
+      templateDetail:
+        type: object
+        additionalProperties:
+          type: string
+  Response Model:
+    type: object
+    required:
+    - Data
+    - ErrorCode
+    - Message
+    - Status
+    - TotalRecords
+    properties:
+      Data:
+        type: object
+        description: Give the Response of API's in the form of JSON Object
+      ErrorCode:
+        type: integer
+        format: int32
+        description: Give the Error Code according to the Response of API's.
+      Message:
+        type: string
+        description: Give the Message according to the Response of API's.
+      Status:
+        type: integer
+        format: int32
+        description: Give the Status according to the Response of API's.
+      TotalRecords:
+        type: integer
+        format: int32
+        description: Give the Total No. of Records according to the Response of API's.
+    description: Model for the response of API's

@@ -1,0 +1,338 @@
+swagger: '2.0'
+info:
+  description: Some custom description of API.
+  version: '1.0'
+  title: POWER2SME Bank Master SKU's information API
+  termsOfService: https://www.power2sme.com/termsandconditions
+  contact:
+    name: Power2sme
+  license:
+    name: License of API
+    url: https://www.power2sme.com/privacypolicy
+host: api.power2sme.com
+basePath: /api/ws/v4
+tags:
+- name: SKU's information
+  description: ' '
+paths:
+  /replacableskulistbysubcategory:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All Replacable SKU's by Sub Category
+      description: In this, you will provide the SKU Code and then it will find the sub category of that SKU and returns the list of All SKU's related with that Sub Category.
+      operationId: getRelevantSkuListBySubCategoryUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: skuid
+        in: query
+        description: SKU Code
+        required: true
+        type: string
+        default: SKUN105075
+      - name: pageIndex
+        in: query
+        description: pageIndex
+        required: false
+        type: integer
+        default: 0
+        format: int32
+      - name: pageSize
+        in: query
+        description: pageSize
+        required: false
+        type: integer
+        default: 0
+        format: int32
+      - name: response
+        in: query
+        description: response
+        required: false
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /skubrandlist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All Brands
+      description: Returns the list of all brands of a single category and single subcategory in SKU System.
+      operationId: getSKUBrandListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: category
+        in: query
+        description: Category
+        required: true
+        type: string
+        default: steel
+      - name: subcategory
+        in: query
+        description: SubCategory
+        required: true
+        type: string
+        default: angle
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /skucategorylist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All Categories
+      description: Returns the list of all categories in SKU System.
+      operationId: getSKUCatListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /skucodelist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All SKU Codes
+      description: Returns the list of all sku codes present in SKU System
+      operationId: getSKUCodeListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /skugradelist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All Grades
+      description: Returns the list of all grades of a single category and single subcategory in SKU System.
+      operationId: getSKUGradeListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: category
+        in: query
+        description: Category
+        required: true
+        type: string
+        default: steel
+      - name: subcategory
+        in: query
+        description: SubCategory
+        required: true
+        type: string
+        default: angle
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /skulist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All SKU's
+      description: Returns the list of all SKU's in SKU System, and can search the result by skuid, category, subcategory, brand.
+      operationId: getSKUListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: skuid
+        in: query
+        description: skuid
+        required: false
+        type: string
+      - name: category
+        in: query
+        description: category
+        required: false
+        type: string
+      - name: subcategory
+        in: query
+        description: subcategory
+        required: false
+        type: string
+      - name: brand
+        in: query
+        description: brand
+        required: false
+        type: string
+      - name: longdesc
+        in: query
+        description: longdesc
+        required: false
+        type: string
+      - name: r
+        in: query
+        description: r
+        required: false
+        type: boolean
+      - name: pageIndex
+        in: query
+        description: pageIndex
+        required: false
+        type: integer
+        default: 0
+        format: int32
+      - name: pageSize
+        in: query
+        description: pageSize
+        required: false
+        type: integer
+        default: 0
+        format: int32
+      - name: response
+        in: query
+        description: response
+        required: false
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /skusubcategorylist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All SubCategories
+      description: Returns the list of all subcategories of a single category in SKU System.
+      operationId: getSKUSubCatListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: category
+        in: query
+        description: Category
+        required: true
+        type: string
+        default: steel
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /uomlist:
+    get:
+      tags:
+      - SKU's information
+      summary: List of All Measuring Units
+      description: Returns the list of all measuring units and can search the measuring units of a single category in SKU System.
+      operationId: getUOMListUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: category
+        in: query
+        description: Category
+        required: false
+        type: string
+        default: steel
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Response Model:
+    type: object
+    required:
+    - Data
+    - ErrorCode
+    - Message
+    - Status
+    - TotalRecords
+    properties:
+      Data:
+        type: object
+        description: Give the Response of API's in the form of JSON Object
+      ErrorCode:
+        type: integer
+        format: int32
+        description: Give the Error Code according to the Response of API's.
+      Message:
+        type: string
+        description: Give the Message according to the Response of API's.
+      Status:
+        type: integer
+        format: int32
+        description: Give the Status according to the Response of API's.
+      TotalRecords:
+        type: integer
+        format: int32
+        description: Give the Total No. of Records according to the Response of API's.
+    description: Model for the response of API's

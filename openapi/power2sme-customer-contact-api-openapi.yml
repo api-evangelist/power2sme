@@ -1,0 +1,392 @@
+swagger: '2.0'
+info:
+  description: Some custom description of API.
+  version: '1.0'
+  title: POWER2SME Bank Master Customer Contact API
+  termsOfService: https://www.power2sme.com/termsandconditions
+  contact:
+    name: Power2sme
+  license:
+    name: License of API
+    url: https://www.power2sme.com/privacypolicy
+host: api.power2sme.com
+basePath: /api/ws/v4
+tags:
+- name: Customer Contact
+  description: ' '
+paths:
+  /cache/user/{query}:
+    get:
+      tags:
+      - Customer Contact
+      summary: Clear Login Credentials Cache
+      description: This is to clear cache of login Credentials in the map
+      operationId: cacheUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: query
+        in: path
+        description: query
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /change/email:
+    get:
+      tags:
+      - Customer Contact
+      summary: 'updates emailId based on email and phone number. '
+      description: This loads user by emailid or phone number.
+      operationId: changeEmailUsingGET
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: oldEmail
+        in: query
+        description: oldemail
+        required: true
+        type: string
+      - name: newEmail
+        in: query
+        description: newemail
+        required: true
+        type: string
+      - name: mobileNo
+        in: query
+        description: mobileno
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /changepassword:
+    post:
+      tags:
+      - Customer Contact
+      summary: Change Password
+      description: Here Customer can change his password by providing old password, new password and Mobile No.
+      operationId: changePasswordUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: changePassword
+        description: ChangePassword
+        required: true
+        schema:
+          $ref: '#/definitions/Change Password'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /createpassword:
+    post:
+      tags:
+      - Customer Contact
+      summary: Create New Password
+      description: If Customer forgot his old password, then here he can create his new password.
+      operationId: createPasswordUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: createPassword
+        description: CreatePassword
+        required: true
+        schema:
+          $ref: '#/definitions/Create Password'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /customerlogin:
+    post:
+      tags:
+      - Customer Contact
+      summary: Sign In
+      description: Here Customer can sign in into his account by providing Mobile No and password.
+      operationId: customerloginUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contactLoginInfo
+        description: ContactLogin
+        required: true
+        schema:
+          $ref: '#/definitions/Contact Login'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /isregister:
+    post:
+      tags:
+      - Customer Contact
+      summary: Contact Already Registered or not
+      description: This is a check whether user is registered with us or not by providing Mobile No. and Email.
+      operationId: isRegisterUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contactEmail
+        description: ContactEmail
+        required: true
+        schema:
+          $ref: '#/definitions/Contact Email'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /loadcustomerdetailsbyid:
+    get:
+      tags:
+      - Customer Contact
+      summary: ' fetches user details based on email/phone'
+      description: This loads user by emailid or phone number.
+      operationId: loadUserByIdUsingGET
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: id
+        in: query
+        description: Email/Phone
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /registercontact:
+    post:
+      tags:
+      - Customer Contact
+      summary: Sign Up
+      description: Here Customer can register and he will registered as a contact in our system. He has to provide some basic and mandatory information like Name, Mobile No. Company Name, Email and Password
+      operationId: registercontactUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contact
+        description: Contact
+        required: true
+        schema:
+          $ref: '#/definitions/Contact Register'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Create Password:
+    type: object
+    required:
+    - newPassword
+    - tokenId
+    - userName
+    properties:
+      newPassword:
+        type: string
+        description: Give the value of New Password
+      tokenId:
+        type: string
+        description: Give the token Id of User
+      userName:
+        type: string
+        description: Give the contact of User
+    description: Model for creating the new password.
+  Contact Login:
+    type: object
+    required:
+    - password
+    - userId
+    properties:
+      password:
+        type: string
+        description: Give the password of User
+      userId:
+        type: string
+        description: Give the User Id of User
+    description: Model for Login into his account
+  Change Password:
+    type: object
+    required:
+    - newPassword
+    - oldPassword
+    - userName
+    properties:
+      newPassword:
+        type: string
+        description: Give the value of new password
+      oldPassword:
+        type: string
+        description: Give the value of old password
+      userName:
+        type: string
+        description: Give the Contact of User
+    description: Model for changing the password.
+  Contact Email:
+    type: object
+    required:
+    - contact_number
+    properties:
+      contact_number:
+        type: string
+        description: Give the contact of User
+      email:
+        type: string
+        description: Give the Email Id of User
+    description: Model of Contact and Email.
+  Contact Register:
+    type: object
+    required:
+    - companyname
+    - confirm_password
+    - contact_number
+    - email
+    - firstname
+    - lastname
+    - leadsource
+    - password
+    properties:
+      companyname:
+        type: string
+        description: Give the Company Name of User
+      confirm_password:
+        type: string
+        description: Give the password of User
+      contact_number:
+        type: string
+        description: Give the mobile no. of User
+      email:
+        type: string
+        description: Give the Email of User
+      firstname:
+        type: string
+        description: Give the first name of User
+      lastname:
+        type: string
+        description: Give the last name of User
+      leadsource:
+        type: string
+        description: Give the Lead Source
+      password:
+        type: string
+        description: Give the password of User
+    description: Model for signing up as a Contact
+  Response Model:
+    type: object
+    required:
+    - Data
+    - ErrorCode
+    - Message
+    - Status
+    - TotalRecords
+    properties:
+      Data:
+        type: object
+        description: Give the Response of API's in the form of JSON Object
+      ErrorCode:
+        type: integer
+        format: int32
+        description: Give the Error Code according to the Response of API's.
+      Message:
+        type: string
+        description: Give the Message according to the Response of API's.
+      Status:
+        type: integer
+        format: int32
+        description: Give the Status according to the Response of API's.
+      TotalRecords:
+        type: integer
+        format: int32
+        description: Give the Total No. of Records according to the Response of API's.
+    description: Model for the response of API's

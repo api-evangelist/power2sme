@@ -1,0 +1,149 @@
+swagger: '2.0'
+info:
+  description: Some custom description of API.
+  version: '1.0'
+  title: POWER2SME Bank Master Location Master API
+  termsOfService: https://www.power2sme.com/termsandconditions
+  contact:
+    name: Power2sme
+  license:
+    name: License of API
+    url: https://www.power2sme.com/privacypolicy
+host: api.power2sme.com
+basePath: /api/ws/v4
+tags:
+- name: Location Master
+  description: ' '
+paths:
+  /cities:
+    get:
+      tags:
+      - Location Master
+      summary: List of all cities of a state
+      description: It will provide All Cities of a State on the basis of State Id.
+      operationId: getAllCitiesOfStateUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: stateid
+        in: query
+        description: stateid
+        required: true
+        type: integer
+        default: 8
+        format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /getalllocation:
+    get:
+      tags:
+      - Location Master
+      summary: List of All locations in Location Master
+      description: It will provide the list of all locations till present day.
+      operationId: getAllLocationUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /locationmaster:
+    get:
+      tags:
+      - Location Master
+      summary: List of All city and state by pincode
+      description: It will provide the list of all cities and states and location on the basis of pincode
+      operationId: getPincodeDataUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: pincode
+        in: query
+        description: pincode
+        required: true
+        type: string
+        default: '122015'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /states:
+    get:
+      tags:
+      - Location Master
+      summary: List of All States
+      description: It will provide the list of all states.
+      operationId: getAllStatesUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Response Model:
+    type: object
+    required:
+    - Data
+    - ErrorCode
+    - Message
+    - Status
+    - TotalRecords
+    properties:
+      Data:
+        type: object
+        description: Give the Response of API's in the form of JSON Object
+      ErrorCode:
+        type: integer
+        format: int32
+        description: Give the Error Code according to the Response of API's.
+      Message:
+        type: string
+        description: Give the Message according to the Response of API's.
+      Status:
+        type: integer
+        format: int32
+        description: Give the Status according to the Response of API's.
+      TotalRecords:
+        type: integer
+        format: int32
+        description: Give the Total No. of Records according to the Response of API's.
+    description: Model for the response of API's

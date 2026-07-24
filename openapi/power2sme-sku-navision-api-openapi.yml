@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  description: Some custom description of API.
+  version: '1.0'
+  title: POWER2SME Bank Master SKU Navision API
+  termsOfService: https://www.power2sme.com/termsandconditions
+  contact:
+    name: Power2sme
+  license:
+    name: License of API
+    url: https://www.power2sme.com/privacypolicy
+host: api.power2sme.com
+basePath: /api/ws/v4
+tags:
+- name: SKU Navision
+  description: ' '
+paths:
+  /createnavsku:
+    get:
+      tags:
+      - SKU Navision
+      summary: this creates a new SKU in navision
+      description: this creates a new SKU in navision
+      operationId: createSkuInNavisionUsingGET
+      consumes:
+      - application/json
+      produces:
+      - '*/*'
+      parameters:
+      - name: sku
+        in: query
+        description: sku
+        required: false
+        type: string
+        default: '0'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Response Model:
+    type: object
+    required:
+    - Data
+    - ErrorCode
+    - Message
+    - Status
+    - TotalRecords
+    properties:
+      Data:
+        type: object
+        description: Give the Response of API's in the form of JSON Object
+      ErrorCode:
+        type: integer
+        format: int32
+        description: Give the Error Code according to the Response of API's.
+      Message:
+        type: string
+        description: Give the Message according to the Response of API's.
+      Status:
+        type: integer
+        format: int32
+        description: Give the Status according to the Response of API's.
+      TotalRecords:
+        type: integer
+        format: int32
+        description: Give the Total No. of Records according to the Response of API's.
+    description: Model for the response of API's

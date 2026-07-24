@@ -1,0 +1,170 @@
+swagger: '2.0'
+info:
+  description: Some custom description of API.
+  version: '1.0'
+  title: POWER2SME Bank Master General Mobile OTP Service API
+  termsOfService: https://www.power2sme.com/termsandconditions
+  contact:
+    name: Power2sme
+  license:
+    name: License of API
+    url: https://www.power2sme.com/privacypolicy
+host: api.power2sme.com
+basePath: /api/ws/v4
+tags:
+- name: General Mobile OTP Service
+  description: ' '
+paths:
+  /generateotp:
+    post:
+      tags:
+      - General Mobile OTP Service
+      summary: Generate OTP
+      description: It will generate the one time password by providing the Mobile Number.
+      operationId: generateOtpUsingPOST_3
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-OTP-SOURCE
+        in: header
+        description: X-OTP-SOURCE
+        required: false
+        type: string
+      - in: body
+        name: mobileNumber
+        description: Mobile Number
+        required: true
+        schema:
+          $ref: '#/definitions/Mobile Number'
+      - name: X-OTP-LENGTH
+        in: header
+        description: X-OTP-LENGTH
+        required: false
+        type: integer
+        format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /otp:
+    get:
+      tags:
+      - General Mobile OTP Service
+      summary: Get OTP
+      description: It will return the OTP sent on any mobile number.
+      operationId: getOtpUsingGET
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: mobile
+        in: query
+        description: Mobile Number
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /validateotp:
+    post:
+      tags:
+      - General Mobile OTP Service
+      summary: Validate OTP
+      description: It will validate the OTP sent to your mobile number.
+      operationId: validateOtpUsingPOST_3
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: otp
+        description: otp
+        required: true
+        schema:
+          $ref: '#/definitions/OTP'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response Model'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  OTP:
+    type: object
+    required:
+    - mobileNumber
+    - otp
+    properties:
+      mobileNumber:
+        type: string
+        description: Give the Mobile No. of User
+      otp:
+        type: string
+        description: Give the Otp for that Mobile No.
+    description: Model for validating the otp for mibile number
+  Response Model:
+    type: object
+    required:
+    - Data
+    - ErrorCode
+    - Message
+    - Status
+    - TotalRecords
+    properties:
+      Data:
+        type: object
+        description: Give the Response of API's in the form of JSON Object
+      ErrorCode:
+        type: integer
+        format: int32
+        description: Give the Error Code according to the Response of API's.
+      Message:
+        type: string
+        description: Give the Message according to the Response of API's.
+      Status:
+        type: integer
+        format: int32
+        description: Give the Status according to the Response of API's.
+      TotalRecords:
+        type: integer
+        format: int32
+        description: Give the Total No. of Records according to the Response of API's.
+    description: Model for the response of API's
+  Mobile Number:
+    type: object
+    required:
+    - mobileNumber
+    properties:
+      mobileNumber:
+        type: string
+        description: Give the Mobile No. of User
+      otpMessage:
+        type: string
