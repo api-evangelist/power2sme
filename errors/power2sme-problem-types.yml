@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/power2sme-openapi.json (response codes + Response Model envelope)
+provider: power2sme
+api: POWER2SME API
+format: custom-envelope
+envelope:
+  description: >-
+    All operations return a shared "Response Model" wrapper rather than
+    RFC 9457 problem+json. The wrapper carries a machine-readable ErrorCode
+    plus a human Message and Status, with the payload under Data.
+  fields:
+  - name: Status
+    type: string
+    description: Overall status of the response.
+  - name: ErrorCode
+    type: integer
+    description: Numeric error code reflecting the API response.
+  - name: Message
+    type: string
+    description: Human-readable message.
+  - name: Data
+    type: object
+    description: Response payload as a JSON object.
+  - name: TotalRecords
+    type: integer
+    description: Count of records returned (list responses).
+http_status:
+- code: '200'
+  title: OK
+  occurrences: 49
+- code: '201'
+  title: Created
+  occurrences: 19
+- code: '401'
+  title: Unauthorized
+  occurrences: 49
+  remediation: Authenticate via Sign In (/customerlogin) or the OTP flow and present the resulting token.
+- code: '403'
+  title: Forbidden
+  occurrences: 49
+  remediation: The authenticated principal lacks access to this resource.
+- code: '404'
+  title: Not Found
+  occurrences: 49
+  remediation: Verify the path and any resource identifiers.

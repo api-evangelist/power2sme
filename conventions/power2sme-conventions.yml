@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/power2sme-openapi.json
+provider: power2sme
+api: POWER2SME API
+auth:
+  style: login/OTP token
+  detail: >-
+    Authenticate through Sign In (/customerlogin) or the OTP flow
+    (/generateotp -> /validateotp); operations return 401/403 when the
+    token is missing or insufficient. See authentication/.
+versioning:
+  style: uri-path
+  current: v4
+  base_path: /api/ws/v4
+  note: Version is embedded in the base path; no version header documented.
+error_envelope:
+  shape: custom-wrapper
+  fields: [Status, ErrorCode, Message, Data, TotalRecords]
+  cross_ref: errors/power2sme-problem-types.yml
+pagination:
+  style: undocumented
+  signal: Response Model carries TotalRecords for list responses; no page/limit params documented.
+idempotency:
+  supported: false
+  note: No idempotency key header documented in the spec.
+rate_limit_signaling:
+  documented: false
+metadata:
+  documented: false
+request_id_tracing:
+  documented: false
+content_types:
+  request: application/json
+  response: application/json
+cross_links:
+  errors: errors/power2sme-problem-types.yml
+  authentication: authentication/power2sme-authentication.yml
+  lifecycle: lifecycle/power2sme-lifecycle.yml

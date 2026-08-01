@@ -1,0 +1,208 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/power2sme-openapi.json (operations)
+status: candidate
+provider: power2sme
+api: POWER2SME API
+note: No official hosted/remote MCP server was found. This is a CANDIDATE tool list derived one-to-one
+  from the 49 Swagger operations, for a future MCP server that would wrap the Power2SME API.
+server:
+  transport: candidate
+  base_url: https://api.power2sme.com/api/ws/v4
+tools:
+- name: getAppLinkUsingGET
+  method: GET
+  path: /api/ws/v4/applink
+  summary: Mobile Application Download Link
+- name: approxOrderValListUsingGET
+  method: GET
+  path: /api/ws/v4/approxordervallist
+  summary: List of Credit Amounts
+- name: getBankListUsingGET
+  method: GET
+  path: /api/ws/v4/banklist
+  summary: List of All banks in Bank Master
+- name: searchBankMasterUsingPOST
+  method: POST
+  path: /api/ws/v4/bankmaster
+  summary: Information of All Banks Branches
+- name: addBankIfscUsingPOST
+  method: POST
+  path: /api/ws/v4/bankmaster/add
+  summary: Add Bank IFSC
+- name: cacheUsingGET
+  method: GET
+  path: /api/ws/v4/cache/user/{query}
+  summary: Clear Login Credentials Cache
+- name: changeEmailUsingGET
+  method: GET
+  path: /api/ws/v4/change/email
+  summary: updates emailId based on email and phone number.
+- name: changePasswordUsingPOST
+  method: POST
+  path: /api/ws/v4/changepassword
+  summary: Change Password
+- name: getAllCitiesOfStateUsingGET
+  method: GET
+  path: /api/ws/v4/cities
+  summary: List of all cities of a state
+- name: createSkuInNavisionUsingGET
+  method: GET
+  path: /api/ws/v4/createnavsku
+  summary: this creates a new SKU in navision
+- name: createPasswordUsingPOST
+  method: POST
+  path: /api/ws/v4/createpassword
+  summary: Create New Password
+- name: customerloginUsingPOST
+  method: POST
+  path: /api/ws/v4/customerlogin
+  summary: Sign In
+- name: getActiveCustomersUsingGET
+  method: GET
+  path: /api/ws/v4/customers/active
+  summary: fetches list of active customers
+- name: sendEmailVerificationMailUsingPOST
+  method: POST
+  path: /api/ws/v4/email/verification
+  summary: Send email verification mail to the customer
+- name: postVerifiedEmailUsingGET
+  method: GET
+  path: /api/ws/v4/email/verify/{uuid}
+  summary: Receive email verified status from customer
+- name: getEntityListUsingGET
+  method: GET
+  path: /api/ws/v4/entitylist
+  summary: List of All entities in Entity Master
+- name: generateOtpUsingPOST_3
+  method: POST
+  path: /api/ws/v4/generateotp
+  summary: Generate OTP
+- name: generateOtpUsingPOST
+  method: POST
+  path: /api/ws/v4/generateotpbytemplate
+  summary: Generate OTP By Template
+- name: generateOtpUsingPOST_2
+  method: POST
+  path: /api/ws/v4/generateotpforcontact
+  summary: Generate OTP for Customer
+- name: generateOtpUsingPOST_1
+  method: POST
+  path: /api/ws/v4/generateotpforcontactbytemplate
+  summary: Generate OTP for Customer By Template
+- name: saveTrueCallerCallBackDetailsUsingPOST
+  method: POST
+  path: /api/ws/v4/getAccessTokenFromTrueCaller
+  summary: saveTrueCallerCallBackDetails
+- name: getTrueCallerDataForRequestIdUsingGET
+  method: GET
+  path: /api/ws/v4/getTruecallerInfo
+  summary: getTrueCallerDataForRequestId
+- name: getAllLocationUsingGET
+  method: GET
+  path: /api/ws/v4/getalllocation
+  summary: List of All locations in Location Master
+- name: isRegisterUsingPOST
+  method: POST
+  path: /api/ws/v4/isregister
+  summary: Contact Already Registered or not
+- name: loadUserByIdUsingGET
+  method: GET
+  path: /api/ws/v4/loadcustomerdetailsbyid
+  summary: fetches user details based on email/phone
+- name: getPincodeDataUsingGET
+  method: GET
+  path: /api/ws/v4/locationmaster
+  summary: List of All city and state by pincode
+- name: getNextWorkingDateUsingGET
+  method: GET
+  path: /api/ws/v4/nextworkingdate
+  summary: Next working date
+- name: getOtpUsingGET
+  method: GET
+  path: /api/ws/v4/otp
+  summary: Get OTP
+- name: getPower2SMEEmployeeDetailsUsingGET
+  method: GET
+  path: /api/ws/v4/p2semployees
+  summary: fetches all employee names and their corresponding email IDs
+- name: getPreviousWorkingDateUsingGET
+  method: GET
+  path: /api/ws/v4/previousworkingdate
+  summary: Previous working date
+- name: registercontactUsingPOST
+  method: POST
+  path: /api/ws/v4/registercontact
+  summary: Sign Up
+- name: getRelevantSkuListBySubCategoryUsingGET
+  method: GET
+  path: /api/ws/v4/replacableskulistbysubcategory
+  summary: List of All Replacable SKU's by Sub Category
+- name: searchUserUsingPOST
+  method: POST
+  path: /api/ws/v4/searchUser
+  summary: searchUser
+- name: sendNotifUsingPOST
+  method: POST
+  path: /api/ws/v4/send/{mode}
+  summary: Send notification via e-mail or SMS
+- name: getSKUBrandListUsingGET
+  method: GET
+  path: /api/ws/v4/skubrandlist
+  summary: List of All Brands
+- name: getSKUCatListUsingGET
+  method: GET
+  path: /api/ws/v4/skucategorylist
+  summary: List of All Categories
+- name: getSKUCodeListUsingGET
+  method: GET
+  path: /api/ws/v4/skucodelist
+  summary: List of All SKU Codes
+- name: getSKUGradeListUsingGET
+  method: GET
+  path: /api/ws/v4/skugradelist
+  summary: List of All Grades
+- name: getSKUListUsingGET
+  method: GET
+  path: /api/ws/v4/skulist
+  summary: List of All SKU's
+- name: getSKUSubCatListUsingGET
+  method: GET
+  path: /api/ws/v4/skusubcategorylist
+  summary: List of All SubCategories
+- name: getAllStatesUsingGET
+  method: GET
+  path: /api/ws/v4/states
+  summary: List of All States
+- name: getTaxationPrefListUsingGET
+  method: GET
+  path: /api/ws/v4/taxationpreflist
+  summary: List of Taxation Preference
+- name: getUOMListUsingGET
+  method: GET
+  path: /api/ws/v4/uomlist
+  summary: List of All Measuring Units
+- name: urgencyListUsingGET
+  method: GET
+  path: /api/ws/v4/urgencylist
+  summary: List of Credit Days
+- name: validateOtpUsingPOST_3
+  method: POST
+  path: /api/ws/v4/validateotp
+  summary: Validate OTP
+- name: validateOtpUsingPOST
+  method: POST
+  path: /api/ws/v4/validateotpbytemplate
+  summary: Validate OTP when Generate By Template
+- name: validateOtpUsingPOST_2
+  method: POST
+  path: /api/ws/v4/validateotpforcontact
+  summary: Validate OTP for Customer
+- name: validateOtpUsingPOST_1
+  method: POST
+  path: /api/ws/v4/validateotpforcontactbytemplate
+  summary: Validate OTP for Customer when Generate By Template
+- name: getRptWaodBySmeIdUsingGET
+  method: GET
+  path: /api/ws/v4/waod/{smeId}
+  summary: Get weighted average overdue days of an sme

@@ -1,0 +1,31 @@
+overlay: 1.0.0
+info:
+  title: Power2SME API Evangelist enhancements
+  version: 1.0.0
+x-provenance:
+  generated: '2026-07-20'
+  method: generated
+  source: openapi/power2sme-openapi.json
+  note: >-
+    Non-destructive enhancement layer over the published Swagger 2.0 document.
+    Captures API Evangelist enrichment (clearer description, resolved contact,
+    documented auth model) without mutating the original spec.
+extends: ../openapi/power2sme-openapi.json
+actions:
+- target: $.info.description
+  update: >-
+    Power2SME (India's First Buying Club for SMEs) exposes version 4 of its
+    platform API covering SME onboarding (Sign Up / Sign In / OTP), password
+    lifecycle, SKU and catalog masters, bank/location/entity masters, and
+    notification services. All responses share a common envelope
+    (Status / ErrorCode / Message / Data / TotalRecords).
+- target: $.info.contact
+  update:
+    name: Power2SME
+    url: https://www.power2sme.com
+- target: $.info
+  update:
+    x-auth-model: >-
+      No securityDefinitions are declared; access is gated by a login/OTP token
+      obtained via /customerlogin or the /generateotp -> /validateotp flow.
+      Operations return 401 Unauthorized and 403 Forbidden without a valid token.

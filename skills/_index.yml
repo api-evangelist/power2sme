@@ -1,0 +1,15 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/power2sme-openapi.json
+provider: power2sme
+api: POWER2SME API
+skills:
+- name: power2sme-otp-onboarding
+  file: power2sme-otp-onboarding.md
+  description: Register a new SME contact, verify the mobile number by OTP, and sign in.
+  operations:
+  - registercontactUsingPOST
+  - generateOtpUsingPOST_3
+  - validateOtpUsingPOST_3
+  - customerloginUsingPOST
+  - createPasswordUsingPOST

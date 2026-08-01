@@ -1,22 +1,456 @@
 aid: power2sme
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/power2sme.png
 name: Power2SME
-description: 'Power2SME is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: marketplaces. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Power2SME operates "India's First Buying Club for SMEs" — a B2B raw-materials
+  procurement and SME-financing platform that aggregates demand from small and
+  medium enterprises to secure better pricing and access to working capital. The
+  company exposes a public version 4 platform API (POWER2SME API) covering SME
+  onboarding (Sign Up, Sign In, OTP verification, TrueCaller), password
+  lifecycle, SKU and catalog master data, bank/location/entity reference masters,
+  credit and holiday-calendar utilities, and email/SMS notification services.
+  Surfaced as a portfolio company of Accel and enriched into the API Evangelist
+  network from its live Swagger 2.0 documentation.
 url: https://raw.githubusercontent.com/api-evangelist/power2sme/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - accel
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: active
+x-tier-reason: live-api-found
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Marketplaces
-apis: []
+- SME
+- Procurement
+- India
+- Onboarding
+- OTP
+- API
+apis:
+- aid: power2sme:power2sme-bank-master-api
+  name: Power2SME Bank Master API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Bank Master
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-bank-master-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-customer-contact-api
+  name: Power2SME Customer Contact API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Customer Contact
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-customer-contact-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-email-verification-api
+  name: Power2SME Email Verification API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Email Verification
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-email-verification-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-employee-login-api
+  name: Power2SME Employee Login API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Employee Login
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-employee-login-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-general-mobile-otp-service-api
+  name: Power2SME General Mobile OTP Service API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - General Mobile OTP Service
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-general-mobile-otp-service-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-general-mobile-otp-service-by-template-api
+  name: Power2SME General Mobile OTP Service By Template API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - General Mobile OTP Service By Template
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-general-mobile-otp-service-by-template-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-holiday-calendar-api
+  name: Power2SME Holiday Calendar API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Holiday Calendar
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-holiday-calendar-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-location-master-api
+  name: Power2SME Location Master API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Location Master
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-location-master-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-mobile-application-api
+  name: Power2SME Mobile Application API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Mobile Application
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-mobile-application-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-mobile-otp-service-by-template-for-customer-only-api
+  name: Power2SME Mobile OTP Service By Template for Customer only API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Mobile OTP Service By Template for Customer only
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-mobile-otp-service-by-template-for-customer-only-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-mobile-otp-service-for-customer-only-api
+  name: Power2SME Mobile OTP Service for Customer only API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Mobile OTP Service for Customer only
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-mobile-otp-service-for-customer-only-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-notification-service-api
+  name: Power2SME Notification Service API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Notification Service
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-notification-service-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-p2s-rpt-api
+  name: Power2SME P2S RPT API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - P2S RPT
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-p2s-rpt-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-sku-navision-api
+  name: Power2SME SKU Navision API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - SKU Navision
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-sku-navision-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-sku-s-information-api
+  name: Power2SME SKU's information API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - SKU's information
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-sku-s-information-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-static-information-api
+  name: Power2SME Static information API
+  description: ''
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - Static information
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-static-information-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
+- aid: power2sme:power2sme-true-caller-controller-api
+  name: Power2SME true-caller-controller API
+  description: True Caller Controller
+  humanURL: https://api.power2sme.com/
+  baseURL: https://api.power2sme.com/api/ws/v4
+  tags:
+  - true-caller-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/power2sme-true-caller-controller-api-openapi.yml
+  - type: Authentication
+    url: authentication/power2sme-authentication.yml
+  - type: ErrorCatalog
+    url: errors/power2sme-problem-types.yml
+  - type: Conformance
+    url: conformance/power2sme-conformance.yml
+  - type: Conventions
+    url: conventions/power2sme-conventions.yml
+  - type: DataModel
+    url: data-model/power2sme-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/power2sme-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/power2sme-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +459,26 @@ maintainers:
 common:
 - type: Website
   url: http://www.power2sme.com
+- type: Documentation
+  url: https://api.power2sme.com/
+- type: APIReference
+  url: https://api.power2sme.com/api/ws/v4/swagger-ui.html
+- type: TermsOfService
+  url: https://www.power2sme.com/termsandconditions
+- type: PrivacyPolicy
+  url: https://www.power2sme.com/privacypolicy
+- type: Authentication
+  url: authentication/power2sme-authentication.yml
+- type: DomainSecurity
+  url: security/power2sme-domain-security.yml
+- type: MCPServer
+  url: mcp/power2sme-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/power2sme-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

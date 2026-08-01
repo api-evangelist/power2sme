@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/power2sme-openapi.json (definitions + $ref graph)
+provider: power2sme
+api: POWER2SME API
+note: >-
+  Derived from the Swagger 2.0 definitions. The schema graph is shallow: only
+  one intra-model reference exists (User self-reference for reporting hierarchy).
+  Most operations return the generic Response Model envelope with untyped Data.
+entities:
+- name: User
+  fields: [id, firstName, lastName, email, mobile, department, roleId, roleName, reportsToId, reportsToLevel, reportsToDepth]
+  identifier: id
+- name: Contact Register
+  fields: [firstname, lastname, companyname, contact_number, email, password, confirm_password, leadsource]
+- name: Contact Login
+  fields: [userId, password]
+- name: Contact Email
+  fields: [contact_number, email]
+- name: Change Password
+  fields: [userName, oldPassword, newPassword]
+- name: Create Password
+  fields: [userName, newPassword, tokenId]
+- name: OTP
+  fields: [mobileNumber, otp]
+- name: OTP By Template
+  fields: [mobileNumber, message]
+- name: Mobile Number
+  fields: [mobileNumber, otpMessage]
+- name: TrueCallerAccessToken
+  fields: [accessToken, requestId, state]
+- name: Bank Master
+  fields: [bank, branch, ifsc, micrCode, address, city, district, state, contact, limit]
+- name: Email details of the customer
+  fields: [emailId, templateDetail]
+- name: Response Model
+  fields: [Status, ErrorCode, Message, Data, TotalRecords]
+  role: shared response envelope
+relationships:
+- from: User
+  to: User
+  kind: has_one
+  via: reportsTo
+  note: Self-referential reporting hierarchy (reportsToId / reportsToLevel).

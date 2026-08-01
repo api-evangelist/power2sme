@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: probed
+source: live HTTP probes of provider hosts
+provider: power2sme
+note: >-
+  No well-known documents were served. www.power2sme.com returns 403 for all
+  /.well-known/ paths (WAF), and no file was captured. Recorded for auditability.
+probes:
+- host: www.power2sme.com
+  path: /.well-known/security.txt
+  status: 403
+  file: null
+- host: www.power2sme.com
+  path: /.well-known/openid-configuration
+  status: 403
+  file: null
+- host: www.power2sme.com
+  path: /.well-known/oauth-authorization-server
+  status: 403
+  file: null
+- host: www.power2sme.com
+  path: /.well-known/api-catalog
+  status: 403
+  file: null
+- host: www.power2sme.com
+  path: /.well-known/ai-plugin.json
+  status: 403
+  file: null
+- host: www.power2sme.com
+  path: /llms.txt
+  status: 404
+  file: null
+- host: api.power2sme.com
+  path: /.well-known/openid-configuration
+  status: 404
+  file: null

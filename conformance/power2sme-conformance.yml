@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/power2sme-openapi.json (schemes, tags, definitions, responses)
+provider: power2sme
+api: POWER2SME API
+standards:
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityDefinitions in the Swagger document.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery or scheme declared.
+- id: rfc9457
+  conforms: false
+  evidence: Errors use a custom Response Model envelope (Status/ErrorCode/Message/Data), not application/problem+json.
+- id: rfc7807
+  conforms: false
+  evidence: Same as rfc9457.
+- id: json:api
+  conforms: false
+  evidence: Responses are a custom envelope, not JSON:API document structure.
+- id: odata
+  conforms: false
+  evidence: No OData metadata or query conventions.
+- id: fhir
+  conforms: false
+  evidence: Domain is SME procurement/onboarding, not healthcare.
+- id: fapi
+  conforms: false
+  evidence: No FAPI security profile declared.
+- id: scim
+  conforms: false
+  evidence: No SCIM user/group provisioning surface.
+- id: pagination
+  conforms: partial
+  evidence: Response Model includes a TotalRecords field for list operations, but no documented page/cursor parameters.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key header documented.

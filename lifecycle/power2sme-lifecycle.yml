@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/power2sme-openapi.json + api.power2sme.com documentation landing
+provider: power2sme
+api: POWER2SME API
+versioning:
+  scheme: uri-path
+  current: v4
+  base_path: /api/ws/v4
+  spec_version: '1.0'
+  note: >-
+    The developer landing at https://api.power2sme.com/ describes "version 4"
+    of the Power2SME APIs; the version is carried in the base path.
+deprecation:
+  policy_documented: false
+  deprecated_operations: []
+  note: No Deprecation/Sunset headers (RFC 8594) or deprecation policy documented.
+status_page:
+  present: false
+sla:
+  documented: false
+terms_of_service: https://www.power2sme.com/termsandconditions
