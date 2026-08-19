@@ -206,3 +206,9 @@ tools:
   method: GET
   path: /api/ws/v4/waod/{smeId}
   summary: Get weighted average overdue days of an sme
+deployment:
+  mode: none
+  verified: derived
+  tools: 49
+  checked: '2026-08-12'
+  source: catalog MCP census

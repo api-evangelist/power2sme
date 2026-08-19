@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master true-caller-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "true-caller-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "saveTrueCallerCallBackDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/getAccessTokenFromTrueCaller"
+          },
+          "docs": "saveTrueCallerCallBackDetails"
+        },
+        {
+          "info": {
+            "name": "getTrueCallerDataForRequestId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/getTruecallerInfo",
+            "params": [
+              {
+                "name": "trueCallerRequestId",
+                "value": "",
+                "type": "query",
+                "description": "trueCallerRequestId"
+              }
+            ]
+          },
+          "docs": "getTrueCallerDataForRequestId"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Static information API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Static information",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List of Credit Amounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/approxordervallist"
+          },
+          "docs": "Returns the total types of Credit Amounts which allocates to the Customer"
+        },
+        {
+          "info": {
+            "name": "List of Taxation Preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/taxationpreflist"
+          },
+          "docs": "Returns the total number of Tax Preference we used"
+        },
+        {
+          "info": {
+            "name": "List of Credit Days",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/urgencylist"
+          },
+          "docs": "Returns the total types of Credit Days during which the Customer pays the amount"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

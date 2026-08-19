@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Mobile Application API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mobile Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Mobile Application Download Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/applink",
+            "params": [
+              {
+                "name": "mobile_no",
+                "value": "",
+                "type": "query",
+                "description": "Mobile No."
+              },
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query",
+                "description": "Device Platform"
+              }
+            ]
+          },
+          "docs": "It will send an app link on mobile number via sms by providing the mobile number and device platform like Android, Windows, IOS"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

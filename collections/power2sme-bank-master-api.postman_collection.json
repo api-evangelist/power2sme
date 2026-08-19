@@ -1,0 +1,673 @@
+{
+  "item": [
+    {
+      "id": "7b4e681f-0447-4e9c-8c36-977944218911",
+      "name": "Bank Master",
+      "description": {
+        "content": " ",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f8a20015-2bd4-4cfd-b1d2-b9f43244572e",
+          "name": "List of All banks in Bank Master",
+          "request": {
+            "name": "List of All banks in Bank Master",
+            "description": {
+              "content": "It will provide the list of all banks present in Bank Master",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "banklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4336ac84-fabd-41a5-b8b0-5c1f74150873",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "banklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Data\": {},\n  \"ErrorCode\": 8172,\n  \"Message\": \"string\",\n  \"Status\": 6796,\n  \"TotalRecords\": 2108\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af962bb8-80fe-4913-ba4a-a4e30be324ad",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "banklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ac227cab-728c-4133-93a0-f5424818787f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "banklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f52329a0-e468-4e99-ba56-474d30f48f4e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "banklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37fee070-237f-4af4-afc6-d608b46cde16",
+          "name": "Information of All Banks Branches",
+          "request": {
+            "name": "Information of All Banks Branches",
+            "description": {
+              "content": "It provides you all the information of all bank branches on the basis of IFS Code or MICR Code",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bankmaster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "56e15365-91f4-4ddb-a580-8915c8c3da93",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Data\": {},\n  \"ErrorCode\": 8172,\n  \"Message\": \"string\",\n  \"Status\": 6796,\n  \"TotalRecords\": 2108\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34ac4795-42a1-4099-856c-05c1ac02c793",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb32fdd5-a20d-4c03-b314-55c345dd6c33",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99b34f95-037b-4480-9ecf-705db068a584",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cdab52b9-4c44-4508-a0fa-5fdbf678fa4c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e6e284e-d44b-442e-939e-2b847959dd28",
+          "name": "Add Bank IFSC",
+          "request": {
+            "name": "Add Bank IFSC",
+            "description": {
+              "content": "Adds new IFSC entry in bank master if not present",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bankmaster",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "35c648fc-c46d-4ce9-ab11-7a7d2eb742cf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Data\": {},\n  \"ErrorCode\": 8172,\n  \"Message\": \"string\",\n  \"Status\": 6796,\n  \"TotalRecords\": 2108\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63684d58-5b9c-42c1-abf5-63d39e4eeeb6",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e942b3ab-0a23-48f9-bb5f-f680c20f9731",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa79037d-3a1e-4848-973b-ecd7a84f5509",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c3a43a40-57ce-4632-adf8-0bf5c32a3086",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bankmaster",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ifsc\": \"<string>\",\n  \"address\": \"<string>\",\n  \"bank\": \"<string>\",\n  \"branch\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"district\": \"<string>\",\n  \"limit\": \"<string>\",\n  \"micrCode\": \"<string>\",\n  \"state\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.power2sme.com/api/ws/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "36637adb-5e63-4ab8-99d3-d065f1ed315b",
+    "name": "POWER2SME Bank Master API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Some custom description of API.\n\nContact Support:\n Name: Power2sme",
+      "type": "text/plain"
+    }
+  }
+}

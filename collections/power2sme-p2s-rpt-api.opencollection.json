@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master P2S RPT API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "P2S RPT",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "fetches list of active customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customers/active",
+            "params": [
+              {
+                "name": "sme_id",
+                "value": "",
+                "type": "query",
+                "description": "sme_id"
+              }
+            ]
+          },
+          "docs": "This loads active customers list"
+        },
+        {
+          "info": {
+            "name": "Get weighted average overdue days of an sme",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/waod/:smeId",
+            "params": [
+              {
+                "name": "smeId",
+                "value": "",
+                "type": "path",
+                "description": "SmeId"
+              }
+            ]
+          },
+          "docs": "It provides weighted average overdue days (WAOD) of an sme."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

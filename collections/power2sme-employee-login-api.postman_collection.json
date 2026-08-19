@@ -1,0 +1,452 @@
+{
+  "item": [
+    {
+      "id": "0f639649-51e7-4589-aa60-4ad1f56bdfe6",
+      "name": "Employee Login",
+      "description": {
+        "content": " ",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "65aeaa70-0ff4-4cfc-930b-465f70afaa9f",
+          "name": "fetches all employee names and their corresponding email IDs",
+          "request": {
+            "name": "fetches all employee names and their corresponding email IDs",
+            "description": {
+              "content": " this gets all employee names and their corresponding emailIDs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "p2semployees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "emailIds",
+                  "value": "<string>",
+                  "description": "emailIds"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28f58a8e-47e3-47fe-8a4f-d72ba043eafa",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "p2semployees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "emailIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"Data\": {},\n  \"ErrorCode\": 3706,\n  \"Message\": \"string\",\n  \"Status\": 7481,\n  \"TotalRecords\": 320\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eff28b13-5d25-405a-8b1c-2b5f2afc8323",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "p2semployees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "emailIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "32159d4a-0a61-45e6-be65-0f4004a5daea",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "p2semployees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "emailIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8845248c-3b8e-4c96-a9a0-a86a598cd9d7",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "p2semployees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "emailIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbfeef17-add4-4de9-b4fb-0278d23b123a",
+          "name": "searchUser",
+          "request": {
+            "name": "searchUser",
+            "description": {},
+            "url": {
+              "path": [
+                "searchUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"reportsTo\": {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"reportsTo\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    \"reportsToDepth\": \"<integer>\",\n    \"reportsToId\": \"<string>\",\n    \"reportsToLevel\": \"<integer>\",\n    \"roleId\": \"<string>\",\n    \"roleName\": \"<string>\",\n    \"sessionId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"userHash\": \"<string>\",\n    \"userHashEncrypted\": \"<string>\",\n    \"userName\": \"<string>\"\n  },\n  \"reportsToDepth\": \"<integer>\",\n  \"reportsToId\": \"<string>\",\n  \"reportsToLevel\": \"<integer>\",\n  \"roleId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"userHash\": \"<string>\",\n  \"userHashEncrypted\": \"<string>\",\n  \"userName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a71df4f-767f-462d-b95a-95a4de79484c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"reportsTo\": {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"reportsTo\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    \"reportsToDepth\": \"<integer>\",\n    \"reportsToId\": \"<string>\",\n    \"reportsToLevel\": \"<integer>\",\n    \"roleId\": \"<string>\",\n    \"roleName\": \"<string>\",\n    \"sessionId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"userHash\": \"<string>\",\n    \"userHashEncrypted\": \"<string>\",\n    \"userName\": \"<string>\"\n  },\n  \"reportsToDepth\": \"<integer>\",\n  \"reportsToId\": \"<string>\",\n  \"reportsToLevel\": \"<integer>\",\n  \"roleId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"userHash\": \"<string>\",\n  \"userHashEncrypted\": \"<string>\",\n  \"userName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Data\": {},\n  \"ErrorCode\": 3706,\n  \"Message\": \"string\",\n  \"Status\": 7481,\n  \"TotalRecords\": 320\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1cb660f-5301-4a00-82a0-8191315e1d2c",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"reportsTo\": {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"reportsTo\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    \"reportsToDepth\": \"<integer>\",\n    \"reportsToId\": \"<string>\",\n    \"reportsToLevel\": \"<integer>\",\n    \"roleId\": \"<string>\",\n    \"roleName\": \"<string>\",\n    \"sessionId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"userHash\": \"<string>\",\n    \"userHashEncrypted\": \"<string>\",\n    \"userName\": \"<string>\"\n  },\n  \"reportsToDepth\": \"<integer>\",\n  \"reportsToId\": \"<string>\",\n  \"reportsToLevel\": \"<integer>\",\n  \"roleId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"userHash\": \"<string>\",\n  \"userHashEncrypted\": \"<string>\",\n  \"userName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "646a392e-3b92-4a0b-aa25-590231cd8eb8",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"reportsTo\": {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"reportsTo\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    \"reportsToDepth\": \"<integer>\",\n    \"reportsToId\": \"<string>\",\n    \"reportsToLevel\": \"<integer>\",\n    \"roleId\": \"<string>\",\n    \"roleName\": \"<string>\",\n    \"sessionId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"userHash\": \"<string>\",\n    \"userHashEncrypted\": \"<string>\",\n    \"userName\": \"<string>\"\n  },\n  \"reportsToDepth\": \"<integer>\",\n  \"reportsToId\": \"<string>\",\n  \"reportsToLevel\": \"<integer>\",\n  \"roleId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"userHash\": \"<string>\",\n  \"userHashEncrypted\": \"<string>\",\n  \"userName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d611d35e-3e48-45fa-8ec9-601763d546a0",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"reportsTo\": {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"reportsTo\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    \"reportsToDepth\": \"<integer>\",\n    \"reportsToId\": \"<string>\",\n    \"reportsToLevel\": \"<integer>\",\n    \"roleId\": \"<string>\",\n    \"roleName\": \"<string>\",\n    \"sessionId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"userHash\": \"<string>\",\n    \"userHashEncrypted\": \"<string>\",\n    \"userName\": \"<string>\"\n  },\n  \"reportsToDepth\": \"<integer>\",\n  \"reportsToId\": \"<string>\",\n  \"reportsToLevel\": \"<integer>\",\n  \"roleId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"userHash\": \"<string>\",\n  \"userHashEncrypted\": \"<string>\",\n  \"userName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3bd89fb1-3390-4c15-b594-87c18ed2e1ab",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobile\": \"<string>\",\n  \"reportsTo\": {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"reportsTo\": {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    \"reportsToDepth\": \"<integer>\",\n    \"reportsToId\": \"<string>\",\n    \"reportsToLevel\": \"<integer>\",\n    \"roleId\": \"<string>\",\n    \"roleName\": \"<string>\",\n    \"sessionId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"userHash\": \"<string>\",\n    \"userHashEncrypted\": \"<string>\",\n    \"userName\": \"<string>\"\n  },\n  \"reportsToDepth\": \"<integer>\",\n  \"reportsToId\": \"<string>\",\n  \"reportsToLevel\": \"<integer>\",\n  \"roleId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"userHash\": \"<string>\",\n  \"userHashEncrypted\": \"<string>\",\n  \"userName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.power2sme.com/api/ws/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "92bf2d31-b6f1-4a86-a33f-713dd59aa5d7",
+    "name": "POWER2SME Bank Master Employee Login API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Some custom description of API.\n\nContact Support:\n Name: Power2sme",
+      "type": "text/plain"
+    }
+  }
+}

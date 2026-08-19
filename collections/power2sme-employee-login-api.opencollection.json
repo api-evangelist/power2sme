@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Employee Login API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employee Login",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "fetches all employee names and their corresponding email IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/p2semployees",
+            "params": [
+              {
+                "name": "emailIds",
+                "value": "",
+                "type": "query",
+                "description": "emailIds"
+              }
+            ]
+          },
+          "docs": " this gets all employee names and their corresponding emailIDs"
+        },
+        {
+          "info": {
+            "name": "searchUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/searchUser"
+          },
+          "docs": "searchUser"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bank Master",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List of All banks in Bank Master",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/banklist"
+          },
+          "docs": "It will provide the list of all banks present in Bank Master"
+        },
+        {
+          "info": {
+            "name": "Information of All Banks Branches",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bankmaster"
+          },
+          "docs": "It provides you all the information of all bank branches on the basis of IFS Code or MICR Code"
+        },
+        {
+          "info": {
+            "name": "Add Bank IFSC",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bankmaster/add"
+          },
+          "docs": "Adds new IFSC entry in bank master if not present"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

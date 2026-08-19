@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Notification Service API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notification Service",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send notification via e-mail or SMS",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/send/:mode",
+            "params": [
+              {
+                "name": "mode",
+                "value": "",
+                "type": "path",
+                "description": "mode"
+              }
+            ]
+          },
+          "docs": "allowed values for mode param are: email, sms"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

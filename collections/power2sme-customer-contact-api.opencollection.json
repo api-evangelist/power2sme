@@ -1,0 +1,142 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Customer Contact API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customer Contact",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Clear Login Credentials Cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/cache/user/:query",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "path",
+                "description": "query"
+              }
+            ]
+          },
+          "docs": "This is to clear cache of login Credentials in the map"
+        },
+        {
+          "info": {
+            "name": "updates emailId based on email and phone number. ",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/change/email",
+            "params": [
+              {
+                "name": "oldEmail",
+                "value": "",
+                "type": "query",
+                "description": "oldemail"
+              },
+              {
+                "name": "newEmail",
+                "value": "",
+                "type": "query",
+                "description": "newemail"
+              },
+              {
+                "name": "mobileNo",
+                "value": "",
+                "type": "query",
+                "description": "mobileno"
+              }
+            ]
+          },
+          "docs": "This loads user by emailid or phone number."
+        },
+        {
+          "info": {
+            "name": "Change Password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/changepassword"
+          },
+          "docs": "Here Customer can change his password by providing old password, new password and Mobile No."
+        },
+        {
+          "info": {
+            "name": "Create New Password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/createpassword"
+          },
+          "docs": "If Customer forgot his old password, then here he can create his new password."
+        },
+        {
+          "info": {
+            "name": "Sign In",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customerlogin"
+          },
+          "docs": "Here Customer can sign in into his account by providing Mobile No and password."
+        },
+        {
+          "info": {
+            "name": "Contact Already Registered or not",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/isregister"
+          },
+          "docs": "This is a check whether user is registered with us or not by providing Mobile No. and Email."
+        },
+        {
+          "info": {
+            "name": " fetches user details based on email/phone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/loadcustomerdetailsbyid",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Email/Phone"
+              }
+            ]
+          },
+          "docs": "This loads user by emailid or phone number."
+        },
+        {
+          "info": {
+            "name": "Sign Up",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/registercontact"
+          },
+          "docs": "Here Customer can register and he will registered as a contact in our system. He has to provide some basic and mandatory information like Name, Mobile No. Company Name, Email and Password"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

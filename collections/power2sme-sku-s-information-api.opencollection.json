@@ -1,0 +1,232 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master SKU's information API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SKU's information",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List of All Replacable SKU's by Sub Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/replacableskulistbysubcategory",
+            "params": [
+              {
+                "name": "skuid",
+                "value": "",
+                "type": "query",
+                "description": "SKU Code"
+              },
+              {
+                "name": "pageIndex",
+                "value": "",
+                "type": "query",
+                "description": "pageIndex"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "pageSize"
+              },
+              {
+                "name": "response",
+                "value": "",
+                "type": "query",
+                "description": "response"
+              }
+            ]
+          },
+          "docs": "In this, you will provide the SKU Code and then it will find the sub category of that SKU and returns the list of All SKU's related with that Sub Category."
+        },
+        {
+          "info": {
+            "name": "List of All Brands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/skubrandlist",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Category"
+              },
+              {
+                "name": "subcategory",
+                "value": "",
+                "type": "query",
+                "description": "SubCategory"
+              }
+            ]
+          },
+          "docs": "Returns the list of all brands of a single category and single subcategory in SKU System."
+        },
+        {
+          "info": {
+            "name": "List of All Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/skucategorylist"
+          },
+          "docs": "Returns the list of all categories in SKU System."
+        },
+        {
+          "info": {
+            "name": "List of All SKU Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/skucodelist"
+          },
+          "docs": "Returns the list of all sku codes present in SKU System"
+        },
+        {
+          "info": {
+            "name": "List of All Grades",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/skugradelist",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Category"
+              },
+              {
+                "name": "subcategory",
+                "value": "",
+                "type": "query",
+                "description": "SubCategory"
+              }
+            ]
+          },
+          "docs": "Returns the list of all grades of a single category and single subcategory in SKU System."
+        },
+        {
+          "info": {
+            "name": "List of All SKU's",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/skulist",
+            "params": [
+              {
+                "name": "skuid",
+                "value": "",
+                "type": "query",
+                "description": "skuid"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "category"
+              },
+              {
+                "name": "subcategory",
+                "value": "",
+                "type": "query",
+                "description": "subcategory"
+              },
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query",
+                "description": "brand"
+              },
+              {
+                "name": "longdesc",
+                "value": "",
+                "type": "query",
+                "description": "longdesc"
+              },
+              {
+                "name": "r",
+                "value": "",
+                "type": "query",
+                "description": "r"
+              },
+              {
+                "name": "pageIndex",
+                "value": "",
+                "type": "query",
+                "description": "pageIndex"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "pageSize"
+              },
+              {
+                "name": "response",
+                "value": "",
+                "type": "query",
+                "description": "response"
+              }
+            ]
+          },
+          "docs": "Returns the list of all SKU's in SKU System, and can search the result by skuid, category, subcategory, brand."
+        },
+        {
+          "info": {
+            "name": "List of All SubCategories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/skusubcategorylist",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Category"
+              }
+            ]
+          },
+          "docs": "Returns the list of all subcategories of a single category in SKU System."
+        },
+        {
+          "info": {
+            "name": "List of All Measuring Units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/uomlist",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Category"
+              }
+            ]
+          },
+          "docs": "Returns the list of all measuring units and can search the measuring units of a single category in SKU System."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

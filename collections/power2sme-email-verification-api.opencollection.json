@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Email Verification API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Email Verification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send email verification mail to the customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/email/verification",
+            "headers": [
+              {
+                "name": "X-META-INFO-SOURCE",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "It will send mail to email Id of the customer which needs to be verified."
+        },
+        {
+          "info": {
+            "name": "Receive email verified status from customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/email/verify/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID"
+              }
+            ]
+          },
+          "docs": "It will receive verified email status from the customer when he clicks on link sent in verification email."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

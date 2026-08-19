@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Mobile OTP Service for Customer only API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mobile OTP Service for Customer only",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate OTP for Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/generateotpforcontact"
+          },
+          "docs": "It will generate the one time password by providing the Mobile Number for customer."
+        },
+        {
+          "info": {
+            "name": "Validate OTP for Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/validateotpforcontact"
+          },
+          "docs": "It will validate the OTP sent to your mobile number."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master General Mobile OTP Service API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "General Mobile OTP Service",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate OTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/generateotp",
+            "headers": [
+              {
+                "name": "X-OTP-SOURCE",
+                "value": ""
+              },
+              {
+                "name": "X-OTP-LENGTH",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "It will generate the one time password by providing the Mobile Number."
+        },
+        {
+          "info": {
+            "name": "Get OTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/otp",
+            "params": [
+              {
+                "name": "mobile",
+                "value": "",
+                "type": "query",
+                "description": "Mobile Number"
+              }
+            ]
+          },
+          "docs": "It will return the OTP sent on any mobile number."
+        },
+        {
+          "info": {
+            "name": "Validate OTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/validateotp"
+          },
+          "docs": "It will validate the OTP sent to your mobile number."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

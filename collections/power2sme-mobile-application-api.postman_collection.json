@@ -1,0 +1,238 @@
+{
+  "item": [
+    {
+      "id": "226d85ce-bd34-4b77-bc7c-611fb97981ee",
+      "name": "Mobile Application",
+      "description": {
+        "content": " ",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a666d1dc-7d1e-4eda-996a-c40f190f2571",
+          "name": "Mobile Application Download Link",
+          "request": {
+            "name": "Mobile Application Download Link",
+            "description": {
+              "content": "It will send an app link on mobile number via sms by providing the mobile number and device platform like Android, Windows, IOS",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applink"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "mobile_no",
+                  "value": "8896421916",
+                  "description": "(Required) Mobile No."
+                },
+                {
+                  "disabled": false,
+                  "key": "platform",
+                  "value": "Android",
+                  "description": "(Required) Device Platform"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59db6ff0-723d-4095-9246-d45c8e0c9cb8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mobile_no",
+                      "value": "8896421916"
+                    },
+                    {
+                      "key": "platform",
+                      "value": "Android"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Data\": {},\n  \"ErrorCode\": 8077,\n  \"Message\": \"string\",\n  \"Status\": 1242,\n  \"TotalRecords\": 4732\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a4b0765-b9c5-4f46-8dad-eff00f844f1a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mobile_no",
+                      "value": "8896421916"
+                    },
+                    {
+                      "key": "platform",
+                      "value": "Android"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2f7e5e9a-a02b-4a6c-9ef7-d86f4ac91bb1",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mobile_no",
+                      "value": "8896421916"
+                    },
+                    {
+                      "key": "platform",
+                      "value": "Android"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0842c58f-a802-4de7-8798-24b3354eed0c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mobile_no",
+                      "value": "8896421916"
+                    },
+                    {
+                      "key": "platform",
+                      "value": "Android"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.power2sme.com/api/ws/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4c0a675d-22dd-41b6-b6e9-7cc8702bbfb4",
+    "name": "POWER2SME Bank Master Mobile Application API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Some custom description of API.\n\nContact Support:\n Name: Power2sme",
+      "type": "text/plain"
+    }
+  }
+}

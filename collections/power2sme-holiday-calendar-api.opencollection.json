@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "POWER2SME Bank Master Holiday Calendar API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Holiday Calendar",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List of All entities in Entity Master",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/entitylist"
+          },
+          "docs": "It will provide the list of all entities present in Entity Master"
+        },
+        {
+          "info": {
+            "name": "Next working date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/nextworkingdate",
+            "params": [
+              {
+                "name": "entityId",
+                "value": "",
+                "type": "query",
+                "description": "entityId"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "date"
+              }
+            ]
+          },
+          "docs": "It will provide next working date, if given date(format: yyyy-MM-dd) is working date then it will return same date"
+        },
+        {
+          "info": {
+            "name": "Previous working date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/previousworkingdate",
+            "params": [
+              {
+                "name": "entityId",
+                "value": "",
+                "type": "query",
+                "description": "entityId"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "date"
+              }
+            ]
+          },
+          "docs": "It will provide previous working date, if given date(format: yyyy-MM-dd) is working date then it will return same date"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
