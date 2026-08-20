@@ -41,6 +41,14 @@ tags:
 - India
 - Onboarding
 - OTP
+tags_raw:
+- Company
+- Marketplaces
+- SME
+- Procurement
+- India
+- Onboarding
+- OTP
 - API
 apis:
 - aid: power2sme:power2sme-bank-master-api
@@ -264,7 +272,8 @@ apis:
   description: ''
   humanURL: https://api.power2sme.com/
   baseURL: https://api.power2sme.com/api/ws/v4
-  tags:
+  tags: []
+  tags_raw:
   - Mobile OTP Service By Template for Customer only
   properties:
   - type: OpenAPI
