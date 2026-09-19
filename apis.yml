@@ -47,7 +47,7 @@ created: '2026-07-17'
 modified: '2026-07-20'
 tags:
 - Company
-- Marketplaces
+- Marketplace
 - SME
 - Procurement
 - India
@@ -261,6 +261,8 @@ apis:
   humanURL: https://api.power2sme.com/
   baseURL: https://api.power2sme.com/api/ws/v4
   tags:
+  - Mobile Applications
+  tags_raw:
   - Mobile Application
   properties:
   - type: OpenAPI
