@@ -1,23 +1,7 @@
 {
   "provider": "power2sme",
   "sources": [
-    "power2sme-bank-master-api-openapi.yml",
-    "power2sme-customer-contact-api-openapi.yml",
-    "power2sme-email-verification-api-openapi.yml",
-    "power2sme-employee-login-api-openapi.yml",
-    "power2sme-general-mobile-otp-service-api-openapi.yml",
-    "power2sme-general-mobile-otp-service-by-template-api-openapi.yml",
-    "power2sme-holiday-calendar-api-openapi.yml",
-    "power2sme-location-master-api-openapi.yml",
-    "power2sme-mobile-application-api-openapi.yml",
-    "power2sme-mobile-otp-service-by-template-for-customer-only-api-openapi.yml",
-    "power2sme-mobile-otp-service-for-customer-only-api-openapi.yml",
-    "power2sme-notification-service-api-openapi.yml",
-    "power2sme-p2s-rpt-api-openapi.yml",
-    "power2sme-sku-navision-api-openapi.yml",
-    "power2sme-sku-s-information-api-openapi.yml",
-    "power2sme-static-information-api-openapi.yml",
-    "power2sme-true-caller-controller-api-openapi.yml"
+    "_original/power2sme-openapi.json"
   ],
   "outputs": [
     "power2sme-bank-master-api-openapi.yml",
@@ -41,6 +25,28 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "power2sme-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0; renamed 10 component key(s) illegal in 3.x (e.g. Bank Master)",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "power2sme-bank-master-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-customer-contact-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-email-verification-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-employee-login-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-general-mobile-otp-service-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-general-mobile-otp-service-by-template-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-holiday-calendar-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-location-master-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-mobile-application-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-mobile-otp-service-by-template-for-customer-only-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-mobile-otp-service-for-customer-only-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-notification-service-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-p2s-rpt-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-sku-navision-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-sku-s-information-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-static-information-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "power2sme-true-caller-controller-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

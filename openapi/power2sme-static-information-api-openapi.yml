@@ -1,16 +1,16 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: Some custom description of API.
   version: '1.0'
-  title: POWER2SME Bank Master Static information API
+  title: POWER2SME Static information API
   termsOfService: https://www.power2sme.com/termsandconditions
   contact:
     name: Power2sme
   license:
     name: License of API
     url: https://www.power2sme.com/privacypolicy
-host: api.power2sme.com
-basePath: /api/ws/v4
+servers:
+- url: https://api.power2sme.com/api/ws/v4
 tags:
 - name: Static information
   description: ' '
@@ -22,15 +22,13 @@ paths:
       summary: List of Credit Amounts
       description: Returns the total types of Credit Amounts which allocates to the Customer
       operationId: approxOrderValListUsingGET
-      consumes:
-      - application/json
-      produces:
-      - application/json
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/Response Model'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response_Model'
         '401':
           description: Unauthorized
         '403':
@@ -44,15 +42,13 @@ paths:
       summary: List of Taxation Preference
       description: Returns the total number of Tax Preference we used
       operationId: getTaxationPrefListUsingGET
-      consumes:
-      - application/json
-      produces:
-      - application/json
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/Response Model'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response_Model'
         '401':
           description: Unauthorized
         '403':
@@ -66,47 +62,46 @@ paths:
       summary: List of Credit Days
       description: Returns the total types of Credit Days during which the Customer pays the amount
       operationId: urgencyListUsingGET
-      consumes:
-      - application/json
-      produces:
-      - application/json
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/Response Model'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response_Model'
         '401':
           description: Unauthorized
         '403':
           description: Forbidden
         '404':
           description: Not Found
-definitions:
-  Response Model:
-    type: object
-    required:
-    - Data
-    - ErrorCode
-    - Message
-    - Status
-    - TotalRecords
-    properties:
-      Data:
-        type: object
-        description: Give the Response of API's in the form of JSON Object
-      ErrorCode:
-        type: integer
-        format: int32
-        description: Give the Error Code according to the Response of API's.
-      Message:
-        type: string
-        description: Give the Message according to the Response of API's.
-      Status:
-        type: integer
-        format: int32
-        description: Give the Status according to the Response of API's.
-      TotalRecords:
-        type: integer
-        format: int32
-        description: Give the Total No. of Records according to the Response of API's.
-    description: Model for the response of API's
+components:
+  schemas:
+    Response_Model:
+      type: object
+      required:
+      - Data
+      - ErrorCode
+      - Message
+      - Status
+      - TotalRecords
+      properties:
+        Data:
+          type: object
+          description: Give the Response of API's in the form of JSON Object
+        ErrorCode:
+          type: integer
+          format: int32
+          description: Give the Error Code according to the Response of API's.
+        Message:
+          type: string
+          description: Give the Message according to the Response of API's.
+        Status:
+          type: integer
+          format: int32
+          description: Give the Status according to the Response of API's.
+        TotalRecords:
+          type: integer
+          format: int32
+          description: Give the Total No. of Records according to the Response of API's.
+      description: Model for the response of API's

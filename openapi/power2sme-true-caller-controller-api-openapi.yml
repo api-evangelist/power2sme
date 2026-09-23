@@ -1,16 +1,16 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: Some custom description of API.
   version: '1.0'
-  title: POWER2SME Bank Master true-caller-controller API
+  title: POWER2SME True Caller Controller API
   termsOfService: https://www.power2sme.com/termsandconditions
   contact:
     name: Power2sme
   license:
     name: License of API
     url: https://www.power2sme.com/privacypolicy
-host: api.power2sme.com
-basePath: /api/ws/v4
+servers:
+- url: https://api.power2sme.com/api/ws/v4
 tags:
 - name: true-caller-controller
   description: True Caller Controller
@@ -21,22 +21,13 @@ paths:
       - true-caller-controller
       summary: saveTrueCallerCallBackDetails
       operationId: saveTrueCallerCallBackDetailsUsingPOST
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: body
-        name: token
-        description: token
-        required: true
-        schema:
-          $ref: '#/definitions/TrueCallerAccessToken'
       responses:
         '200':
           description: OK
-          schema:
-            type: boolean
+          content:
+            application/json:
+              schema:
+                type: boolean
         '201':
           description: Created
         '401':
@@ -45,40 +36,47 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrueCallerAccessToken'
+        description: token
+        required: true
   /getTruecallerInfo:
     get:
       tags:
       - true-caller-controller
       summary: getTrueCallerDataForRequestId
       operationId: getTrueCallerDataForRequestIdUsingGET
-      consumes:
-      - application/json
-      produces:
-      - application/json
       parameters:
       - name: trueCallerRequestId
         in: query
         description: trueCallerRequestId
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/TrueCallerAccessToken'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrueCallerAccessToken'
         '401':
           description: Unauthorized
         '403':
           description: Forbidden
         '404':
           description: Not Found
-definitions:
-  TrueCallerAccessToken:
-    type: object
-    properties:
-      accessToken:
-        type: string
-      requestId:
-        type: string
-      state:
-        type: string
+components:
+  schemas:
+    TrueCallerAccessToken:
+      type: object
+      properties:
+        accessToken:
+          type: string
+        requestId:
+          type: string
+        state:
+          type: string
