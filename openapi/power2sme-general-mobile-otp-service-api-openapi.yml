@@ -116,6 +116,16 @@ paths:
         required: true
 components:
   schemas:
+    Mobile_Number:
+      type: object
+      required:
+      - mobileNumber
+      properties:
+        mobileNumber:
+          type: string
+          description: Give the Mobile No. of User
+        otpMessage:
+          type: string
     OTP:
       type: object
       required:
@@ -129,16 +139,6 @@ components:
           type: string
           description: Give the Otp for that Mobile No.
       description: Model for validating the otp for mibile number
-    Mobile_Number:
-      type: object
-      required:
-      - mobileNumber
-      properties:
-        mobileNumber:
-          type: string
-          description: Give the Mobile No. of User
-        otpMessage:
-          type: string
     Response_Model:
       type: object
       required:

@@ -48,7 +48,7 @@ modified: '2026-07-20'
 tags:
 - Company
 - Marketplace
-- SME
+- Small Business
 - Procurement
 - India
 - Onboarding
@@ -261,9 +261,10 @@ apis:
   humanURL: https://api.power2sme.com/
   baseURL: https://api.power2sme.com/api/ws/v4
   tags:
-  - Mobile Applications
+  - Mobile App
   tags_raw:
   - Mobile Application
+  - Mobile Applications
   properties:
   - type: OpenAPI
     url: openapi/power2sme-mobile-application-api-openapi.yml
@@ -451,7 +452,7 @@ apis:
   - type: LLMsTxt
     url: llms/power2sme-llms.txt
 - aid: power2sme:power2sme-true-caller-controller-api
-  name: Power2SME true-caller-controller API
+  name: Power2SME True Caller Controller API
   description: True Caller Controller
   humanURL: https://api.power2sme.com/
   baseURL: https://api.power2sme.com/api/ws/v4
