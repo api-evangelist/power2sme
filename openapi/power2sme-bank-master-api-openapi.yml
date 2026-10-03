@@ -95,6 +95,34 @@ paths:
         required: true
 components:
   schemas:
+    Response_Model:
+      type: object
+      required:
+      - Data
+      - ErrorCode
+      - Message
+      - Status
+      - TotalRecords
+      properties:
+        Data:
+          type: object
+          description: Give the Response of API's in the form of JSON Object
+        ErrorCode:
+          type: integer
+          format: int32
+          description: Give the Error Code according to the Response of API's.
+        Message:
+          type: string
+          description: Give the Message according to the Response of API's.
+        Status:
+          type: integer
+          format: int32
+          description: Give the Status according to the Response of API's.
+        TotalRecords:
+          type: integer
+          format: int32
+          description: Give the Total No. of Records according to the Response of API's.
+      description: Model for the response of API's
     Bank_Master:
       type: object
       required:
@@ -131,31 +159,3 @@ components:
           type: string
           description: Give the State in which Bank is there
       description: Model for information of Bank.
-    Response_Model:
-      type: object
-      required:
-      - Data
-      - ErrorCode
-      - Message
-      - Status
-      - TotalRecords
-      properties:
-        Data:
-          type: object
-          description: Give the Response of API's in the form of JSON Object
-        ErrorCode:
-          type: integer
-          format: int32
-          description: Give the Error Code according to the Response of API's.
-        Message:
-          type: string
-          description: Give the Message according to the Response of API's.
-        Status:
-          type: integer
-          format: int32
-          description: Give the Status according to the Response of API's.
-        TotalRecords:
-          type: integer
-          format: int32
-          description: Give the Total No. of Records according to the Response of API's.
-      description: Model for the response of API's

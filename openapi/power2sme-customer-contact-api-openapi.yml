@@ -281,6 +281,51 @@ components:
           type: string
           description: Give the Email Id of User
       description: Model of Contact and Email.
+    Create_Password:
+      type: object
+      required:
+      - newPassword
+      - tokenId
+      - userName
+      properties:
+        newPassword:
+          type: string
+          description: Give the value of New Password
+        tokenId:
+          type: string
+          description: Give the token Id of User
+        userName:
+          type: string
+          description: Give the contact of User
+      description: Model for creating the new password.
+    Response_Model:
+      type: object
+      required:
+      - Data
+      - ErrorCode
+      - Message
+      - Status
+      - TotalRecords
+      properties:
+        Data:
+          type: object
+          description: Give the Response of API's in the form of JSON Object
+        ErrorCode:
+          type: integer
+          format: int32
+          description: Give the Error Code according to the Response of API's.
+        Message:
+          type: string
+          description: Give the Message according to the Response of API's.
+        Status:
+          type: integer
+          format: int32
+          description: Give the Status according to the Response of API's.
+        TotalRecords:
+          type: integer
+          format: int32
+          description: Give the Total No. of Records according to the Response of API's.
+      description: Model for the response of API's
     Contact_Register:
       type: object
       required:
@@ -335,48 +380,3 @@ components:
           type: string
           description: Give the Contact of User
       description: Model for changing the password.
-    Create_Password:
-      type: object
-      required:
-      - newPassword
-      - tokenId
-      - userName
-      properties:
-        newPassword:
-          type: string
-          description: Give the value of New Password
-        tokenId:
-          type: string
-          description: Give the token Id of User
-        userName:
-          type: string
-          description: Give the contact of User
-      description: Model for creating the new password.
-    Response_Model:
-      type: object
-      required:
-      - Data
-      - ErrorCode
-      - Message
-      - Status
-      - TotalRecords
-      properties:
-        Data:
-          type: object
-          description: Give the Response of API's in the form of JSON Object
-        ErrorCode:
-          type: integer
-          format: int32
-          description: Give the Error Code according to the Response of API's.
-        Message:
-          type: string
-          description: Give the Message according to the Response of API's.
-        Status:
-          type: integer
-          format: int32
-          description: Give the Status according to the Response of API's.
-        TotalRecords:
-          type: integer
-          format: int32
-          description: Give the Total No. of Records according to the Response of API's.
-      description: Model for the response of API's
